@@ -11,7 +11,7 @@ from collections import Counter
 import csv
 
 # Import full LIWC dictionary
-from liwc_dictionary import LIWC_CATEGORIES
+from .liwc_dictionary import LIWC_CATEGORIES
 
 # For backward compatibility, keep simplified structure for reference
 OLD_CATEGORIES = {
