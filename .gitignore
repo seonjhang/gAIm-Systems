@@ -1,24 +1,73 @@
+# =========================
 # Python
+# =========================
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
 
-# Virtual env
+# Virtual environments
 .venv/
 venv/
 env/
+ENV/
+.conda/
+.python-version
 
-# Jupyter
+# =========================
+# Jupyter / notebooks
+# =========================
 .ipynb_checkpoints/
+*.nbconvert.ipynb
 
-# OS / IDE
+# =========================
+# OS / editor
+# =========================
 .DS_Store
 Thumbs.db
+.idea/
 .vscode/
+*.swp
 
-# Secrets
+# =========================
+# Secrets / env
+# =========================
 .env
+.env.*
+!.env.example
 
-# Data (large)
-data/raw/
-data/processed/
-data/external/
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Data (large / generated)
+# =========================
+data/
+!data/sample/
+!data/sample/**
+
+# If you keep a template Draft file in repo, allow it:
+# !data/Draft.xlsx
+
+# =========================
+# Outputs / artifacts
+# =========================
+outputs/
+artifacts/
+tmp/
+temp/
+
+# =========================
+# Optional: cache files
+# =========================
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
