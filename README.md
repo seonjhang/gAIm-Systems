@@ -41,3 +41,42 @@ source .venv/bin/activate   # mac/linux
 # .venv\Scripts\activate    # windows
 
 pip install -r requirements.txt
+```
+
+### 2) Run Pipeline (high-level)
+
+#### 1. Scrape interviews:
+```bash
+python -m src.scraping.asap_scraper --out data/raw/asap_hockey.csv
+```
+
+#### 2. Clean/standardize transcripts (optional if using existing cleaned file):
+```bash
+python -m src.preprocessing.build_dataset --in data/raw/asap_hockey.csv --out data/processed/asap_hockey_clean.csv
+```
+
+#### 3. LIWC feature extraction:
+```bash
+python -m src.nlp.liwc_analysis --in data/processed/asap_hockey_clean.csv --out data/processed/liwc_results.csv
+```
+
+#### 4. Modeling:
+Open notebooks/02_prediction_model_liwc.ipynb.
+
+## Key Outputs
+
+data/raw/asap_hockey.csv: raw scraped transcripts
+
+data/processed/asap_hockey_clean.csv: cleaned transcripts + metadata
+
+data/processed/liwc_results.csv: LIWC features merged with transcript rows
+
+data/processed/liwc_player_mean.csv: aggregated player-level LIWC features
+
+---
+### Handover Notes
+
+If you are taking over this project, start with:
+- /docs/pipeline_runbook.md
+- /docs/data_dictionary.md
+- notebooks/01_data_cleansing.ipynb
