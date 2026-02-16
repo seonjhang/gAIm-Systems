@@ -1,82 +1,228 @@
-# Predicting NHL Draft Success Using Interview Language (LIWC) + Pre-draft Signals
+# 🏒 Hockey Draft Interview Collection Pipeline
+## Overview
 
-This repository contains a research pipeline built as part of a startup-led academic project to replicate/adapt Farrell et al. (2024) in the NHL context.
-It combines:
-- Pre-draft interview transcripts (scraped from ASAP Sports)
-- Linguistic features (LIWC)
-- Draft metadata / outcomes
-to predict draft success and related career outcomes.
+This project collects pre-draft YouTube interviews of NHL players,
+extracts video transcripts, and isolates only the player's speech using GPT-4o-mini.
 
-## Project Goal
-Predict whether a prospect makes the NHL (and related measures such as longevity/impact) using:
-1) Pre-draft interviews → LIWC features  
-2) Draft / performance covariates
+The final output is a structured dataset (TSV / JSONL) that can be used for:
 
-Reference document: see `/docs/project_overview.md`.
+- NLP research
+- Player personality modeling
+- Draft analysis
+- Language pattern studies
+- ML training data
 
----
-
-## Repository Structure
-- `src/scraping/` : interview scraping + transcript extraction
-- `src/nlp/` : LIWC feature extraction utilities
-- `notebooks/` : EDA / cleansing / modeling experiments
-- `docs/` : project overview, data dictionary, runbook
-- `data/` : raw/processed datasets (not committed to Git by default)
-
----
-
-## Data Sources
-- ASAP Sports interview transcripts (public webpages)
-- Draft metadata (see `Draft.xlsx`)
-
-> Note: Raw datasets may contain large text fields and are excluded from Git history via `.gitignore`.
-
----
-
-## Quickstart
-### 1) Setup
+## 🎯 What This Project Does (In 4 Steps)
 ```bash
-python -m venv .venv
-source .venv/bin/activate   # mac/linux
-# .venv\Scripts\activate    # windows
+Draft.xlsx (player list)
+        ↓
+YouTube Interview Search (YouTube Data API)
+        ↓
+Transcript Extraction (youtube-transcript-api)
+        ↓
+Player Speech Filtering (GPT-4o-mini)
+        ↓
+Structured Dataset Export (TSV / JSONL)
+```
 
+## 📁 Project Structure
+```bash
+hockey-interview-agent/
+│
+├── batch_youtube_transcripts_from_drafted.py
+├── hockey_interview_collector.py
+├── youtube_interview_finder.py
+├── youtube_transcript_extractor.py
+├── player_speech_extractor.py
+├── nhl_article_parser.py
+│
+├── requirements.txt
+├── SETUP.md
+├── README.md
+│
+└── data/
+    ├── raw/
+    │   ├── transcript/
+    │   └── player_speech/
+    └── processed/
+```
+
+## 🗂 Data Folder Explanation
+```bash
+data/raw/
+```
+Contains original collected data.
+
+### 1️⃣ Collection JSON
+
+Full collection results for each player.
+
+Includes:
+- interview metadata
+- sources
+- transcript flags
+- extraction results
+
+### 2️⃣ data/raw/transcript/
+
+Each file contains:
+```bash
+{
+  "video_id": "...",
+  "full_text": "...",
+  "transcript": [
+    {"text": "...", "start": 0.0, "duration": 2.4}
+  ],
+  "word_count": 487,
+  "language": "en",
+  "is_generated": true
+}
+```
+
+This is the complete YouTube transcript.
+
+### 3️⃣ data/raw/player_speech/
+
+This contains GPT-filtered speech:
+```bash
+{
+  "player_name": "...",
+  "player_speech_text": "...",
+  "word_count": 312,
+  "original_word_count": 487,
+  "reduction_ratio": 0.64,
+  "model": "gpt-4o-mini"
+}
+```
+
+This removes:
+- Interviewer questions
+- Non-player speakers
+- Noise
+
+```bash
+data/processed/
+```
+Final structured export used for modeling.
+
+Format (TSV):
+```bash
+player_name    text
+Connor McDavid   I think it's been exciting...
+```
+This is the recommended dataset for analysis.
+
+## ⚙️ Installation
+### 1️⃣ Install dependencies
+```bash
 pip install -r requirements.txt
 ```
+Dependencies include:
+- openai
+- requests
+- beautifulsoup4
+- python-dotenv
+- youtube-transcript-api
+- pandas
 
-### 2) Run Pipeline (high-level)
+### 2️⃣ Setup Environment Variables
 
-#### 1. Scrape interviews:
+Create a .env file:
 ```bash
-python -m src.scraping.asap_scraper --out data/raw/asap_hockey.csv
+OPENAI_API_KEY=your_openai_key
+YOUTUBE_API_KEY=your_youtube_key
+
+# Optional (for proxy rotation)
+PROXY_USERNAME=...
+PROXY_PASSWORD=...
 ```
 
-#### 2. Clean/standardize transcripts (optional if using existing cleaned file):
+## 🚀 Usage
+### A) Collect Interviews for a Single Player
 ```bash
-python -m src.preprocessing.build_dataset --in data/raw/asap_hockey.csv --out data/processed/asap_hockey_clean.csv
+python hockey_interview_collector.py "Connor McDavid"
+```
+This will:
+- Search YouTube
+- Extract transcript
+- Filter player speech (GPT)
+- Save results in data/raw/
+- Append to data/processed/interviews.jsonl
+
+### B) Batch Collect by Draft Year
+```bash
+python batch_youtube_transcripts_from_drafted.py \
+    --excel data/Draft.xlsx \
+    --year 2021 \
+    --youtube_top_n 5
 ```
 
-#### 3. LIWC feature extraction:
+This will:
+- Load all players drafted in the given year
+- Collect top N interviews per player
+- Export a structured TSV file:
 ```bash
-python -m src.nlp.liwc_analysis --in data/processed/asap_hockey_clean.csv --out data/processed/liwc_results.csv
+data/processed/draft_2021_youtube_transcripts_TIMESTAMP.txt
 ```
 
-#### 4. Modeling:
-Open notebooks/02_prediction_model_liwc.ipynb.
+## 🧠 Player Speech Extraction Strategy
 
-## Key Outputs
+We use GPT-4o-mini to identify which transcript segments belong to the player.
 
-data/raw/asap_hockey.csv: raw scraped transcripts
+#### Design Philosophy
+- High recall > high precision
+- Include all player answers
+- Exclude only clear interviewer questions
+- Merge adjacent segments
+- Fallback to heuristic filtering if GPT fails
 
-data/processed/asap_hockey_clean.csv: cleaned transcripts + metadata
+Chunking strategy is used for long transcripts.
 
-data/processed/liwc_results.csv: LIWC features merged with transcript rows
+## 🧪 Reproducibility Checklist
+Before sharing the project:
+- pip install -r requirements.txt works
+- .env.example exists
+- Single-player run works
+- Batch run works
+- Sample data included
+- Large raw data excluded via .gitignore
 
-data/processed/liwc_player_mean.csv: aggregated player-level LIWC features
+## 🔒 Security Notes
+- .env is git-ignored
+- API keys must not be committed
+- Raw data can be large; only sample data should be included in repo
 
----
-### Handover Notes
+## ⚠️ Known Limitations
+- YouTube API quota limits apply
+- Some videos may not have transcripts enabled
+- Web scraping fallback may fail due to site restrictions
+- GPT extraction cost depends on transcript length
 
-If you are taking over this project, start with:
-- /docs/pipeline_runbook.md
-- /docs/data_dictionary.md
-- notebooks/01_data_cleansing.ipynb
+## 📈 Recommended Use of Final Dataset
+Use the processed TSV/JSONL export for:
+- Sentiment analysis
+- Topic modeling
+- Linguistic profiling
+- Pre-draft psychological signal modeling
+- Feature engineering for ML
+Do NOT use raw transcript directly unless you want interviewer text included.
+
+## 👨‍🔬 Project Ownership
+Originally developed for NHL draft interview analysis.
+Core components:
+- YouTube Interview Finder
+- Transcript Extractor
+- GPT-based Player Speech Extractor
+- Structured Dataset Exporter
+
+If extending this project:
+- Add multi-language support
+- Add sentiment scoring
+- Add automatic summarization
+- Add vector embedding export
+
+## 🏁 Minimal Quick Start
+```bash
+pip install -r requirements.txt
+python batch_youtube_transcripts_from_drafted.py --year 2021
+```
