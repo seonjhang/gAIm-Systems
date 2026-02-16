@@ -1,0 +1,57 @@
+{
+  "player_name": "Connor McDavid",
+  "workflow_start": "2025-11-23T21:49:57.908517",
+  "videos_found": 5,
+  "transcripts_extracted": 5,
+  "player_speech_extracted": 5,
+  "files": [
+    "data/raw/player_speech/Connor_McDavid_6u6K7g97GZ8_player_speech.json",
+    "data/raw/player_speech/Connor_McDavid_yM4v4Q_E6N4_player_speech.json",
+    "data/raw/player_speech/Connor_McDavid_pPHAedWa5cw_player_speech.json",
+    "data/raw/player_speech/Connor_McDavid_OXUGAxJqQuo_player_speech.json",
+    "data/raw/player_speech/Connor_McDavid_ifIcRIXCn-g_player_speech.json"
+  ],
+  "videos": [
+    {
+      "title": "Behind the scenes of the NHL Draft Combine",
+      "url": "https://www.youtube.com/watch?v=6u6K7g97GZ8",
+      "channel": "SPORTSNET",
+      "publishedAt": "2015-06-22T16:18:10Z",
+      "videoId": "6u6K7g97GZ8",
+      "score": 7
+    },
+    {
+      "title": "Connor McDavid being interviewed at SCF Game 3",
+      "url": "https://www.youtube.com/watch?v=yM4v4Q_E6N4",
+      "channel": "Oilers Archives 2015",
+      "publishedAt": "2015-06-09T12:20:32Z",
+      "videoId": "yM4v4Q_E6N4",
+      "score": 7
+    },
+    {
+      "title": "Connor McDavid Draft Combine Media Scrum",
+      "url": "https://www.youtube.com/watch?v=pPHAedWa5cw",
+      "channel": "Oilers Archives 2015",
+      "publishedAt": "2015-06-06T02:35:36Z",
+      "videoId": "pPHAedWa5cw",
+      "score": 7
+    },
+    {
+      "title": "Connor McDavid CHL Awards Interview May 30, 2015",
+      "url": "https://www.youtube.com/watch?v=OXUGAxJqQuo",
+      "channel": "Oilers Archives 2015",
+      "publishedAt": "2015-06-03T08:21:44Z",
+      "videoId": "OXUGAxJqQuo",
+      "score": 7
+    },
+    {
+      "title": "Connor McDavid Interview May 29, 2015 (Kelowna vs Quebec City)",
+      "url": "https://www.youtube.com/watch?v=ifIcRIXCn-g",
+      "channel": "Oilers Archives 2015",
+      "publishedAt": "2015-05-30T03:46:58Z",
+      "videoId": "ifIcRIXCn-g",
+      "score": 7
+    }
+  ],
+  "workflow_end": "2025-11-23T21:50:51.577279"
+}
