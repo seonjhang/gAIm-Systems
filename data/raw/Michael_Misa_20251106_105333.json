@@ -1,0 +1,28 @@
+{
+  "player_name": "Michael Misa",
+  "collection_date": "2025-11-06T10:53:30.158624",
+  "interviews": [
+    {
+      "source": "NHL.com",
+      "source_url": "https://www.nhl.com/news/matthew-schaefer-michael-misa-join-nhl-draft-class-podcast",
+      "title": "Schaefer, Misa join 'NHL Draft Class' podcast",
+      "published_date": "2025-06-28T16:46:46",
+      "content": "\"s ready to play in the NHL next season. Michael Misa, who went to the San Jose Sharks at No. 2, also said how the NHL is his goal for next season. \"I think when I\"\n\npodcast . Co-hosts Adam Kimelman and Mike G. Morreale were joined on the show by the first three selections, starting with defenseman Matthew Schaefer, who went No. 1 to the New York Islanders. Schaefer accepted his jersey from NHL Commissioner Gary Bettman, but it came with a bit of a surprise -- a ribbon in support of Schaefer's mother, Jennifer, who died from breast cancer in February 2024. Jennifer Schaefer's initials also were sewn into the collar of the jersey.",
+      "quotes": [
+        "s ready to play in the NHL next season. Michael Misa, who went to the San Jose Sharks at No. 2, also said how the NHL is his goal for next season. \"I think when I"
+      ],
+      "quote_count": 1,
+      "word_count": 116,
+      "type": "nhl_article_interview",
+      "interview_segments": [],
+      "player_statements": [
+        "podcast . Co-hosts Adam Kimelman and Mike G. Morreale were joined on the show by the first three selections, starting with defenseman Matthew Schaefer, who went No. 1 to the New York Islanders. Schaefer accepted his jersey from NHL Commissioner Gary Bettman, but it came with a bit of a surprise -- a ribbon in support of Schaefer's mother, Jennifer, who died from breast cancer in February 2024. Jennifer Schaefer's initials also were sewn into the collar of the jersey."
+      ]
+    }
+  ],
+  "sources": {
+    "nhl_articles": 1,
+    "youtube_videos": 0,
+    "other_web": 0
+  }
+}

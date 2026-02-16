@@ -1,0 +1,25 @@
+{
+  "player_name": "Owen Power",
+  "collection_date": "2025-11-23T22:39:54.042514",
+  "interviews": [
+    {
+      "source": "YouTube",
+      "source_url": "https://www.youtube.com/watch?v=puyLnDbxDoM",
+      "title": "How will Owen Power fit on Buffalo&#39;s blueline?",
+      "published_date": "2021-06-03T05:14:51Z",
+      "channel": "TSN",
+      "video_id": "puyLnDbxDoM",
+      "score": 5,
+      "type": "youtube_video_interview",
+      "content": "YouTube video: How will Owen Power fit on Buffalo&#39;s blueline?",
+      "word_count": 0,
+      "transcript_extracted": false,
+      "player_speech_extracted": false
+    }
+  ],
+  "sources": {
+    "nhl_articles": 0,
+    "youtube_videos": 1,
+    "other_web": 0
+  }
+}

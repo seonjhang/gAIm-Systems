@@ -1,0 +1,59 @@
+{
+  "player_name": "Connor McDavid",
+  "collection_date": "2025-11-06T10:35:45.933557",
+  "interviews": [
+    {
+      "source": "YouTube",
+      "source_url": "https://www.youtube.com/watch?v=pPHAedWa5cw",
+      "title": "Connor McDavid Draft Combine Media Scrum",
+      "published_date": "2015-06-06T02:35:36Z",
+      "channel": "Oilers Archives 2015",
+      "video_id": "pPHAedWa5cw",
+      "score": 7,
+      "type": "youtube_video_interview",
+      "content": "YouTube video: Connor McDavid Draft Combine Media Scrum",
+      "word_count": 0
+    },
+    {
+      "source": "YouTube",
+      "source_url": "https://www.youtube.com/watch?v=OXUGAxJqQuo",
+      "title": "Connor McDavid CHL Awards Interview May 30, 2015",
+      "published_date": "2015-06-03T08:21:44Z",
+      "channel": "Oilers Archives 2015",
+      "video_id": "OXUGAxJqQuo",
+      "score": 7,
+      "type": "youtube_video_interview",
+      "content": "YouTube video: Connor McDavid CHL Awards Interview May 30, 2015",
+      "word_count": 0
+    },
+    {
+      "source": "YouTube",
+      "source_url": "https://www.youtube.com/watch?v=ifIcRIXCn-g",
+      "title": "Connor McDavid Interview May 29, 2015 (Kelowna vs Quebec City)",
+      "published_date": "2015-05-30T03:46:58Z",
+      "channel": "Oilers Archives 2015",
+      "video_id": "ifIcRIXCn-g",
+      "score": 7,
+      "type": "youtube_video_interview",
+      "content": "YouTube video: Connor McDavid Interview May 29, 2015 (Kelowna vs Quebec City)",
+      "word_count": 0
+    },
+    {
+      "source": "YouTube",
+      "source_url": "https://www.youtube.com/watch?v=cBbbbt34VtY",
+      "title": "Connor McDavid Media Scrum - 5/29/15",
+      "published_date": "2015-05-30T04:59:07Z",
+      "channel": "Inside the Press Box",
+      "video_id": "cBbbbt34VtY",
+      "score": 5,
+      "type": "youtube_video_interview",
+      "content": "YouTube video: Connor McDavid Media Scrum - 5/29/15",
+      "word_count": 0
+    }
+  ],
+  "sources": {
+    "nhl_articles": 0,
+    "youtube_videos": 4,
+    "other_web": 0
+  }
+}

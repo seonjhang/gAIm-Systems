@@ -1,0 +1,71 @@
+{
+  "player_name": "John Mustard",
+  "collection_date": "2025-11-06T10:38:44.357930",
+  "interviews": [
+    {
+      "source": "YouTube",
+      "source_url": "https://www.youtube.com/watch?v=SmPrVM-w-Tk",
+      "title": "2024 NHL Draft Prospect Profile: John Mustard",
+      "published_date": "2024-05-26T15:00:31Z",
+      "channel": "Locked On Senators",
+      "video_id": "SmPrVM-w-Tk",
+      "score": 7,
+      "type": "youtube_video_interview",
+      "content": "YouTube video: 2024 NHL Draft Prospect Profile: John Mustard",
+      "word_count": 0
+    },
+    {
+      "source": "YouTube",
+      "source_url": "https://www.youtube.com/watch?v=mj-HQWjmOjI",
+      "title": "John Mustard Interview #hockey #letsgoflyers #Prospect,#Watch,#2024Draft,#OHL",
+      "published_date": "2024-06-03T16:05:08Z",
+      "channel": "RNJ Media Sports",
+      "video_id": "mj-HQWjmOjI",
+      "score": 5,
+      "type": "youtube_video_interview",
+      "content": "YouTube video: John Mustard Interview #hockey #letsgoflyers #Prospect,#Watch,#2024Draft,#OHL",
+      "word_count": 0
+    },
+    {
+      "source": "YouTube",
+      "source_url": "https://www.youtube.com/watch?v=fmNzKvwuZcY",
+      "title": "Prospect Watch Welcomes John Mustard",
+      "published_date": "2024-04-29T22:00:05Z",
+      "channel": "RNJ Media Sports",
+      "video_id": "fmNzKvwuZcY",
+      "score": 3,
+      "type": "youtube_video_interview",
+      "content": "YouTube video: Prospect Watch Welcomes John Mustard",
+      "word_count": 0
+    },
+    {
+      "source": "YouTube",
+      "source_url": "https://www.youtube.com/watch?v=1Izo6izb860",
+      "title": "John Mustard | Bergen Catholic | 2022 JSZ All Zone Profile",
+      "published_date": "2022-03-23T13:27:06Z",
+      "channel": "Jersey Sports Zone",
+      "video_id": "1Izo6izb860",
+      "score": 3,
+      "type": "youtube_video_interview",
+      "content": "YouTube video: John Mustard | Bergen Catholic | 2022 JSZ All Zone Profile",
+      "word_count": 0
+    },
+    {
+      "source": "YouTube",
+      "source_url": "https://www.youtube.com/watch?v=3_5fKpUQULQ",
+      "title": "John Mustard",
+      "published_date": "2021-12-27T17:24:13Z",
+      "channel": "Hockey Video",
+      "video_id": "3_5fKpUQULQ",
+      "score": 3,
+      "type": "youtube_video_interview",
+      "content": "YouTube video: John Mustard",
+      "word_count": 0
+    }
+  ],
+  "sources": {
+    "nhl_articles": 0,
+    "youtube_videos": 5,
+    "other_web": 0
+  }
+}
