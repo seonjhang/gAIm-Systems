@@ -1,5 +1,20 @@
+# OpenAI (GPT-4o-mini for player speech extraction)
 openai>=1.0.0
+
+# HTTP & Web scraping
 requests>=2.31.0
 beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Environment variables
 python-dotenv>=1.0.0
-youtube-transcript-api>=0.6.0
+
+# YouTube Transcript Extraction
+youtube-transcript-api>=0.6.2
+
+# Data processing
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# Optional: better logging & typing compatibility
+typing-extensions>=4.5.0
