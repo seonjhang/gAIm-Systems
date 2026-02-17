@@ -215,12 +215,6 @@ Core components:
 - GPT-based Player Speech Extractor
 - Structured Dataset Exporter
 
-If extending this project:
-- Add multi-language support
-- Add sentiment scoring
-- Add automatic summarization
-- Add vector embedding export
-
 ## 🏁 Minimal Quick Start
 ```bash
 pip install -r requirements.txt
